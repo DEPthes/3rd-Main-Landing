@@ -36,4 +36,29 @@ export const Container = styled.div`
       margin-bottom: 32px;
     }
   }
+
+  > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+  }
+`;
+
+export const ImageWrap = styled.div`
+  width: 100%;
+  padding-bottom: 116.7%;
+  position: relative;
+
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `;
