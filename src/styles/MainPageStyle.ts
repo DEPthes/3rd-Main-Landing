@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { isMobile, isTablet } from "@/hooks/Media";
 
 export const Container = styled.div`
-  transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,11 +16,38 @@ export const Container = styled.div`
   ${isMobile} {
     gap: 30px;
   }
+
+  > img {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 export const TextWrap = styled.div`
   transition: all 0.3s ease-in-out;
   text-align: center;
+  position: relative;
+  z-index: 1;
+
+  > img {
+    position: absolute;
+    top: 10%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    ${isTablet} {
+      width: 91.6px;
+    }
+
+    ${isMobile} {
+      width: 71.12px;
+      opacity: 0.5;
+    }
+  }
 
   > h1 {
     color: #fff;

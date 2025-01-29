@@ -4,11 +4,12 @@ import MenuOpenIcon from "@assets/icons/menuOpen.svg?react";
 import MenuClosedIcon from "@assets/icons/menuClosed.svg?react";
 import useDMediaQuery from "@/hooks/useDMediaQuery";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { isDesktop } = useDMediaQuery();
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const Header = () => {
   }, [isDesktop]);
 
   return (
-    <S.Container>
+    <S.Container $isMain={location.pathname === "/"}>
       <S.IconWrap
         onClick={() => {
           navigate("/");
