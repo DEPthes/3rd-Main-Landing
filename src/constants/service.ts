@@ -3,6 +3,11 @@ import Image2 from "@assets/images/thumbnail/wishwesee.png";
 import Image3 from "@assets/images/thumbnail/paykids.png";
 import Image4 from "@assets/images/thumbnail/일거수일투족.png";
 
+import DetailImage1 from "@assets/images/detail/spillthetea.png";
+import DetailImage2 from "@assets/images/detail/wishwesee.png";
+import DetailImage3 from "@assets/images/detail/paykids.png";
+import DetailImage4 from "@assets/images/detail/일거수일투족.png";
+
 export const Service = [
   {
     id: 1,
@@ -30,3 +35,10 @@ export const Service = [
     image: Image4,
   },
 ];
+
+export const ServiceDetailImages: Record<string, string> = {
+  "1": DetailImage1,
+  "2": DetailImage2,
+  "3": DetailImage3,
+  "4": DetailImage4,
+};
