@@ -51,5 +51,6 @@ export const LinkWrap = styled.div`
   > a {
     font: var(--FooterText);
     color: #fff;
+    flex-shrink: 0;
   }
 `;
