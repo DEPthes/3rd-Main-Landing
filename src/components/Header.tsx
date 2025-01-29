@@ -11,6 +11,23 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setIsTransparent(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      setIsTransparent(window.scrollY === 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [location.pathname]);
 
   useEffect(() => {
     if (isDesktop) {
@@ -19,7 +36,7 @@ const Header = () => {
   }, [isDesktop]);
 
   return (
-    <S.Container $isMain={location.pathname === "/"}>
+    <S.Container $isTransparent={isTransparent}>
       <S.IconWrap
         onClick={() => {
           navigate("/");
