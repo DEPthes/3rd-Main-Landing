@@ -1,13 +1,13 @@
 import styled, { keyframes } from "styled-components";
 import { isMobile, isTablet } from "@/hooks/Media";
 
-export const Container = styled.div`
+export const Container = styled.div<{ $isMain: boolean }>`
   transition: all 0.3s ease-in-out;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 50px 222px 20px;
-  background-color: #00000030;
+  background-color: ${(props) => (props.$isMain ? "transparent" : "#00000030")};
 
   ${isTablet} {
     padding: 24px;
