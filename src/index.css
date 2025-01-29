@@ -37,6 +37,9 @@
   --ItemContentBigText: 400 20px / normal Pretendard;
   --ItemContentSmallText: 400 8.16px / normal Pretendard;
   --FooterText: 400 12px / 160% Pretendard;
+  --HelpBigText: 600 37.15px / normal Pretendard;
+  --HelpMediumText: 600 20px / normal Pretendard;
+  --HelpSmallText: 600 12px / normal Pretendard;
 }
 
 html,
