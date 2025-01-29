@@ -1,7 +1,7 @@
 import * as S from "@styles/MainPageStyle";
 import { useNavigate } from "react-router-dom";
 import MainBgImage from "@assets/images/background/mainBg.png";
-import mainBgMobileImage from "@assets/images/background/mainBgMobile.png";
+import MainBgMobileImage from "@assets/images/background/mainBgMobile.png";
 import GlassImage from "@assets/images/background/glass.png";
 import useDMediaQuery from "@/hooks/useDMediaQuery";
 
@@ -19,7 +19,7 @@ const MainPage = () => {
       <S.GradientButton onClick={() => navigate("/service")}>
         <span>프로젝트 둘러보기</span>
       </S.GradientButton>
-      {isMobile ? <img src={mainBgMobileImage} /> : <img src={MainBgImage} />}
+      {isMobile ? <img src={MainBgMobileImage} /> : <img src={MainBgImage} />}
     </S.Container>
   );
 };
