@@ -7,13 +7,20 @@ import OrangeBgImage from "@assets/images/background/orange.svg?react";
 import GreenMobileBgImage from "@assets/images/background/greenMobile.svg?react";
 import OrangeMobileBgImage from "@assets/images/background/orangeMobile.svg?react";
 import useDMediaQuery from "@/hooks/useDMediaQuery";
+import { useState } from "react";
 
 const ServicePage = () => {
   const navigate = useNavigate();
   const { isMobile } = useDMediaQuery();
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const totalImages = Service.length;
+
+  const handleImageLoad = () => {
+    setImagesLoaded((prevLoaded) => prevLoaded + 1);
+  };
 
   return (
-    <S.Container>
+    <S.Container $isLoaded={imagesLoaded === totalImages}>
       <h1>Do Evolve Potential in-DEPth</h1>
       <S.ItemWrap>
         {Service.map((data) => {
@@ -23,7 +30,11 @@ const ServicePage = () => {
               onClick={() => navigate(`/service/${data.id}`)}
             >
               <S.ServiceTopWrap>
-                <img src={data.image} alt={data.title} />
+                <img
+                  src={data.image}
+                  alt={data.title}
+                  onLoad={handleImageLoad}
+                />
                 <h3>{data.title}</h3>
                 <p>{data.content}</p>
               </S.ServiceTopWrap>

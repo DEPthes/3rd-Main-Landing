@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { isMobile, isTablet } from "@/hooks/Media";
 
-export const Container = styled.div`
+export const Container = styled.div<{ $isLoaded: boolean }>`
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,8 @@ export const Container = styled.div`
   margin-top: 196px;
   margin-bottom: 80px;
   padding: 0 11px 31px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: ${(props) => (props.$isLoaded ? 1 : 0)};
 
   ${isTablet} {
     margin-top: 100px;
