@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { isMobile, isTablet } from "@/hooks/Media";
 
-export const Container = styled.div`
+export const Container = styled.div<{ $isLoaded: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100dvh;
   gap: 43px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: ${(props) => (props.$isLoaded ? 1 : 0)};
 
   ${isTablet} {
     gap: 20px;
@@ -27,17 +29,18 @@ export const Container = styled.div`
 `;
 
 export const TextWrap = styled.div`
-  transition: all 0.3s ease-in-out;
   text-align: center;
   position: relative;
   z-index: 1;
 
   > img {
+    transition: all 0.3s ease-in-out;
     position: absolute;
     top: 10%;
     left: 33%;
     transform: translate(-50%, -50%);
     z-index: -1;
+    width: 196px;
 
     ${isTablet} {
       width: 91.6px;
@@ -50,6 +53,7 @@ export const TextWrap = styled.div`
   }
 
   > h1 {
+    transition: all 0.3s ease-in-out;
     color: #fff;
     font: var(--MainBigText1);
 
@@ -63,6 +67,7 @@ export const TextWrap = styled.div`
   }
 
   > h2 {
+    transition: all 0.3s ease-in-out;
     color: #fff;
     font: var(--MainBigText2);
 
