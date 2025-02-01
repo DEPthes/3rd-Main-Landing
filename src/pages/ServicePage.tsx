@@ -20,7 +20,7 @@ const ServicePage = () => {
   };
 
   return (
-    <S.Container $isLoaded={imagesLoaded === totalImages}>
+    <S.Container $isLoaded={imagesLoaded >= totalImages}>
       <h1>Do Evolve Potential in-DEPth</h1>
       <S.ItemWrap>
         {Service.map((data) => {
