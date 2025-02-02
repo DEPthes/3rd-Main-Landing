@@ -20,7 +20,7 @@ const Footer = () => {
           <MailIcon />
           <span>2022depth@gmail.com</span>
         </button>
-        <a href="https://depth-mju.co.kr" target="_blank">
+        <a href="https://depth-mju.onrender.com" target="_blank">
           뎁스 홈페이지
         </a>
       </S.LinkWrap>
